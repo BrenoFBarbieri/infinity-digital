@@ -1,0 +1,35 @@
+.header {
+	width: 4rem;
+	height: 100vh;
+	background-color: var(--text);
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+}
+.nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem 0;
+}
+.logoContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid var(--bg);
+	cursor: pointer;
+	transition: .2s;
+}
+.logoContainer h1 {
+	margin-top: .3rem;
+	font-size: .5rem;
+	text-align: center;
+	line-height: 1.5;
+	letter-spacing: .12rem;
+	font-family: 'Open Sans', sans-serif;
+	color: var(--bg);
+}
+.logoContainer svg {
+	height: 1.25rem;
+}
