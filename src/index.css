@@ -3,30 +3,48 @@
 :root {
 	--primary: #9E0DD3;
 	--text: #201C21;
+	--variant: #CCCCCC;
 	--bg: #F2F2F2;
 	--positive: #38b000;
 	--alert: #F24C00;
 	--errors: #d90429;
-	--variant: #CCCCCC;
 }
-
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Nunito', sans-serif;
 }
-
 body {
   	background: var(--bg);
 }
-
-h1 {
+h1, button {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 	letter-spacing: .1rem;
 }
-
-h1, h2, h3, h4, p, span, a, input, button {
+h1, h2, h3, h4, p, span, a, input {
 	color: var(--text);
+}
+.animeTop {
+	opacity: 0;
+	transform: translateY(-20px);
+	animation: animeTop .3s forwards;
+}
+@keyframes animeTop {
+	to {
+		opacity: 1;
+		transform: initial;
+	}
+}
+.animeLeft {
+	opacity: 0;
+	transform: translateX(-20px);
+	animation: animeLeft .3s forwards;
+}
+@keyframes animeLeft {
+	to {
+		opacity: 1;
+		transform: initial;
+	}
 }

@@ -2,6 +2,8 @@ import React from "react";
 
 import styles from "./Bmi.module.css";
 import Card from "../Card";
+import Input from "../Form/Input";
+import Button from "../Form/Button";
 
 const Bmi = () => {
 	const [height, setHeight] = React.useState(0);
@@ -76,17 +78,16 @@ const Bmi = () => {
 		<section className={styles.container}>
 			<Card title="Informe os valores">
 				<form className={styles.form} onSubmit={handleSubmit}>
-					<label htmlFor="height">Altura</label>
-					<input
-						type="text"
+					<Input
+						label="Altura"
 						name="height"
-						id="height"
+						type="text"
 						required
 						placeholder="Metros (m)"
 						onChange={handleInput}
 					/>
-					<label htmlFor="weight">Peso</label>
-					<input
+					<Input
+						label="Peso"
 						type="text"
 						name="weight"
 						id="weight"
@@ -94,14 +95,14 @@ const Bmi = () => {
 						placeholder="Quilogramas (kg)"
 						onChange={handleInput}
 					/>
-					<button>Calcular</button>
+					<Button>Calcular</Button>
 				</form>
 			</Card>
 			{result && (
 				<Card title="Resultado da Avaliação">
 					<div className={styles.result}>
 						<div style={{ background: colorFeedback }}>
-							<p>Valor Massa Corporal</p>
+							<p>Massa Corporal</p>
 							<span>{bmi}</span>
 						</div>
 						<div style={{ background: colorFeedback }}>

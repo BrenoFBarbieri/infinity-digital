@@ -1,0 +1,31 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+}
+.container label {
+	margin-bottom: .2rem;
+	color: var(--variant);
+	transition: .2s;
+}
+.container input {
+	width: 100%;
+	height: 2.25rem;
+	padding-left: .5rem;
+	border: 1px solid var(--variant);
+	border-radius: 6px;
+	transition: .2s;
+}
+.container span {
+	margin-top: .25rem;
+	font-size: .8rem;
+	color: var(--errors);
+}
+.container:hover label,
+.container:focus label {
+	color: var(--primary);
+}
+.container input:focus {
+	border: none;
+	outline: 2px solid var(--primary);
+}
