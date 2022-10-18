@@ -7,35 +7,6 @@
 	display: flex;
 	flex-direction: column;
 }
-.form input {
-	height: 2.5rem;
-	padding-left: .5rem;
-	margin-top: .3rem;
-	margin-bottom: 1.5rem;
-	border: none;
-	border-radius: 8px;
-	background: var(--variant);
-	font-size: 1rem;
-}
-.form input:focus {
-	outline: 2px solid var(--primary);
-}
-.form button {
-	width: 80%;
-	height: 2.5rem;
-	border: none;
-	border-radius: 8px;
-	color: var(--bg);
-	background-color: var(--text);
-	transition: .2s;
-	cursor: pointer;
-	font-size: 1rem;
-	letter-spacing: .1rem;
-	margin: 0 auto;
-}
-.form button:hover {
-	background-color: var(--primary);
-}
 .result {
 	display: flex;
 	flex-direction: column;
