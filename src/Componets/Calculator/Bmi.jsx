@@ -79,6 +79,7 @@ const Bmi = () => {
 			<Card title="Informe os valores">
 				<form className={styles.form} onSubmit={handleSubmit}>
 					<Input
+						width="400px"
 						label="Altura"
 						name="height"
 						type="text"

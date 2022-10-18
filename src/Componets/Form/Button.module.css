@@ -16,6 +16,7 @@
 	background: var(--primary);
 }
 .button:focus {
+	cursor: initial;
 	background: var(--variant);
 }
 
