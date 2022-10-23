@@ -3,18 +3,10 @@
 	flex-direction: column;
 	align-items: center;
 	padding: 2rem;
+	border: 3px dashed  var(--primary);
 	border-radius: 1rem;
-	background: #fcfcfc;
-	box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 .title {
+	font-size: 1.3rem;
 	margin-bottom: 2rem;
-	text-transform: uppercase;
-	font-size: 1rem;
-	letter-spacing: 0;
-	color: var(--variant);
-	transition: .2s;
-}
-.container:hover .title {
-	color: var(--primary);
 }

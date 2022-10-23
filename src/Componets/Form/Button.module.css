@@ -3,20 +3,26 @@
 	height: 2.5rem;
 	border: none;
 	border-radius: 6px;
-	font-size: .8rem;
+	font-size: 1rem;
 	font-weight: 900;
-	letter-spacing: .1rem;
-	text-transform: uppercase;
-	color: var(--bg);
-	background: var(--variant);
-	cursor: pointer;
-	transition: .2s;
-}
-.button:hover {
+	color: var(--title);
 	background: var(--primary);
+	cursor: pointer;
+}
+.button:disabled {
+	cursor: initial;
+	color: var(--border);
+	background: var(--bg-secondary);
 }
 .button:focus {
-	cursor: initial;
-	background: var(--variant);
+	animation: click .5s;
 }
-
+.button:focus-visible {
+	animation: none;
+	outline: 3px solid var(--title) !important;
+}
+@keyframes click {
+	50% {
+		box-shadow: 0 0 .6rem .03rem rgba(90, 90, 253, 0.8);
+	}
+}

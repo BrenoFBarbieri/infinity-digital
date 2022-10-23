@@ -12,7 +12,7 @@
 	display: flex;
 	flex-direction: column;
 }
-.result div {
+.result > div {
 	width: 14rem;
 	display: flex;
 	flex-direction: column;
@@ -23,13 +23,14 @@
 	border-radius: 8px;
 	background: var(--primary);
 }
-.result div p {
+.result > div > p {
 	margin-bottom: .2rem;
+	font-weight: 500;
 	font-size: .8rem;
-	color: var(--bg);
-	opacity: 70%;
+	color: #000;
+	opacity: 60%;
 }
-.result div span {
+.result > div > span {
 	font-weight: 700;
-	color: var(--bg);
+	color: #000;
 }

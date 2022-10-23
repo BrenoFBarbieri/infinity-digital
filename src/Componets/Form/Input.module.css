@@ -3,29 +3,34 @@
 	flex-direction: column;
 	margin-bottom: 1rem;
 }
-.container label {
-	margin-bottom: .2rem;
-	color: var(--variant);
+.container > label {
+	margin-bottom: .3rem;
+	font-size: .9rem;
+	color: var(--title);
+	opacity: 75%;
 	transition: .2s;
 }
-.container input {
+.container > input {
 	width: 100%;
 	height: 2.25rem;
 	padding-left: .5rem;
-	border: 1px solid var(--variant);
+	border: none;
 	border-radius: 6px;
+	outline: 3px solid var(--border);
+	color: #FFF;
+	background: transparent;
 	transition: .2s;
 }
 .container span {
-	margin-top: .25rem;
+	width: 90%;
+	margin-top: .6rem;
 	font-size: .8rem;
+	line-height: 1;
 	color: var(--errors);
 }
-.container:hover label,
-.container:focus label {
-	color: var(--primary);
+.container > input:hover {
+	outline: 3px solid var(--primary);
 }
-.container input:focus {
-	border: none;
-	outline: 2px solid var(--primary);
+.container > input:focus {
+	box-shadow: 0 0 .6rem .03rem rgba(90, 90, 253, 0.8);
 }

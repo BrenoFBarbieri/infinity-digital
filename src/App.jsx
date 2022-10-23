@@ -9,6 +9,7 @@ function App() {
 		<section className={styles.container}>
 			<Header />
 			<div className={styles.content}>
+				<h1>Calculadora Índice de Massa Corporal (IMC)</h1>
 				<BMI />
 			</div>
 		</section>

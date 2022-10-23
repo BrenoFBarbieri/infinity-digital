@@ -1,35 +1,31 @@
 .header {
-	width: 4rem;
-	height: 100vh;
-	background-color: var(--text);
-	box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+	width: 10rem;
+	height: calc(100vh - 4rem);
 }
 .nav {
+	height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 1rem 0;
+	justify-content: space-between;
 }
 .logoContainer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding-bottom: 1rem;
-	border-bottom: 1px solid var(--bg);
 	cursor: pointer;
-	transition: .2s;
+	margin-top: .16rem;
+	margin-bottom: 6rem;
 }
 .logoContainer h1 {
-	margin-top: .3rem;
-	font-size: .5rem;
-	text-align: center;
-	line-height: 1.5;
-	letter-spacing: .12rem;
-	font-family: 'Open Sans', sans-serif;
-	color: var(--bg);
+	font-size: 1.3rem;
+	color: var(--primary);
+	transition: .2s;
 }
-.logoContainer svg {
-	height: 1.25rem;
+.logoContainer:hover h1,
+.logoContainer:focus h1 {
+	color: var(--title);
+}
+.credit i {
+	color: var(--border);
+	font-size: .6em;
+}
+.credit q {
+	font-size: .9em;
 }
