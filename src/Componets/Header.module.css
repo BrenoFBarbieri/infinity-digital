@@ -1,31 +1,46 @@
 .header {
 	width: 10rem;
 	height: calc(100vh - 4rem);
-}
-.nav {
-	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
-.logoContainer {
+.logo {
 	cursor: pointer;
 	margin-top: .16rem;
 	margin-bottom: 6rem;
 }
-.logoContainer h1 {
+.logo h1 {
 	font-size: 1.3rem;
 	color: var(--primary);
 	transition: .2s;
 }
-.logoContainer:hover h1,
-.logoContainer:focus h1 {
+.logo:hover h1,
+.logo:focus h1 {
 	color: var(--title);
+}
+.nav {
+	flex: 1;
+	color: #7f7d84;
+}
+.nav > ul > li {
+	font-size: 1.06rem;
+	margin-bottom: .9rem;
+	cursor: pointer;
+}
+.nav > ul > li:hover {
+	color: var(--primary);
+	letter-spacing: .3px;
 }
 .credit i {
 	color: var(--border);
 	font-size: .6em;
 }
 .credit q {
+	color: var(--title);
 	font-size: .9em;
+	transition: .2s;
+}
+.credit:hover q {
+	color: var(--primary);
 }
