@@ -6,7 +6,7 @@ import Card from "./Card";
 
 const Presentation = () => {
 	return (
-		<Card title="Seja bem-vindo a nossa plataforma!">
+		<Card title="Seja bem-vindo a nossa plataforma!" width={50}>
 			<div className={styles.container}>
 				<section>
 					<p>
