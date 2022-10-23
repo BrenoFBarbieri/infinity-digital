@@ -3,14 +3,3 @@
 	gap: 2rem;
 	padding: 2rem 1rem;
 }
-.content {
-	width: calc(100vw - 13rem);
-	display: flex;
-	flex-direction: column;
-	gap: 6rem;
-}
-.content > h1 {
-	color: var(--title);
-	font-size: 1.6rem;
-	font-family: var(--tpg-primary);
-}

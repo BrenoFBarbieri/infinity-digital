@@ -10,7 +10,7 @@
 	--bg-secondary: #343238;
 	--positive: #6DCE23;
 	--alert: #FFB21D;
-	--errors: #A33B20;
+	--errors: #a82222;
 
 	/* Typographies */
 	--tpg-primary: 'Bebas Neue', cursive;
@@ -26,9 +26,8 @@
 body {
   	background: var(--bg-primary);
 }
-h2, h3, span, p, label {
+h2, h3, h4, strong, i, span, p, label {
 	color: var(--title);
-	opacity: 75%;
 }
 button {
 	font-family: var(--tpg-primary);
