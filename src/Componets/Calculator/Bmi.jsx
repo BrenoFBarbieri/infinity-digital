@@ -111,30 +111,38 @@ const Bmi = () => {
 				</form>
 			</Card>
 			{result && (
-				<Card title="Resultado da Avaliação">
-					<div className={styles.result}>
-						<div style={{ background: colorFeedback }}>
-							<p>Massa Corporal</p>
-							<span>{bmi}</span>
+				<>
+					<Card title="Resultado da Avaliação">
+						<div className={styles.result}>
+							<div style={{ background: colorFeedback }}>
+								<p>Massa Corporal</p>
+								<span>{bmi}</span>
+							</div>
+							<div style={{ background: colorFeedback }}>
+								<p>Classificação</p>
+								<span>
+									{classification.length > 0
+										? classification
+										: "Sem Classificação"}
+								</span>
+							</div>
+							<div style={{ background: colorFeedback }}>
+								<p>Grau Obesidade</p>
+								<span>
+									{obesityGrade.length > 0
+										? obesityGrade
+										: "Sem Grau de Obesidade"}
+								</span>
+							</div>
 						</div>
-						<div style={{ background: colorFeedback }}>
-							<p>Classificação</p>
-							<span>
-								{classification.length > 0
-									? classification
-									: "Sem Classificação"}
-							</span>
-						</div>
-						<div style={{ background: colorFeedback }}>
-							<p>Grau Obesidade</p>
-							<span>
-								{obesityGrade.length > 0
-									? obesityGrade
-									: "Sem Grau de Obesidade"}
-							</span>
-						</div>
-					</div>
-				</Card>
+					</Card>
+					<Card
+						style={{ animationDelay: "1s" }}
+						title="Dicas de alimentação"
+					>
+						Ola
+					</Card>
+				</>
 			)}
 		</section>
 	);

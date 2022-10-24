@@ -70,7 +70,7 @@ table {
 	--primary: #6754D7;
 	--secondary: #4A2AFF;
 	--title: #E2E0E5;
-	--border: #6D6D6D;
+	--border: #7f7d84;
 	--bg-primary: #201F26;
 	--bg-secondary: #343238;
 	--positive: #6DCE23;
@@ -116,7 +116,7 @@ button {
 .animeLeft {
 	opacity: 0;
 	transform: translateX(-20px);
-	animation: animeLeft .3s forwards;
+	animation: animeLeft .9s .2s forwards;
 }
 @keyframes animeLeft {
 	to {

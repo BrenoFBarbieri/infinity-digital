@@ -4,6 +4,17 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	position: relative;
+}
+.header::after {
+	content: '';
+	display: block;
+	height: calc(100% + 4rem);
+	width: 0.06rem;
+	background: var(--bg-secondary);
+	position: absolute;
+	top: -2rem;
+	right: 0;
 }
 .logo {
 	cursor: pointer;
@@ -30,7 +41,7 @@
 	transition: .2s;
 }
 .nav > ul > li:hover > a {
-	color: var(--primary);
+	color: var(--title);
 	letter-spacing: .3px;
 }
 .credit i {
