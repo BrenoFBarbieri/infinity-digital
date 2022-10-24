@@ -5,22 +5,26 @@ import { ListService } from "../ListServices";
 import styles from "./Header.module.css";
 
 const Header = ({ setServiceSelected }) => {
+	function handleClick(event) {
+		event.preventDefault();
+		setServiceSelected(null);
+	}
 	return (
 		<header className={styles.header}>
-			<div
-				className={styles.logo}
-				onClick={(_) => setServiceSelected(null)}
-			>
-				<h1>Infinity Digital</h1>
-			</div>
+			<a href="/" className={styles.logo} onClick={handleClick}>
+				Infinity Digital
+			</a>
 			<nav className={styles.nav}>
 				<ul>
 					{ListService.map((service) => (
 						<li
 							key={service.name}
-							onClick={(_) => setServiceSelected(service)}
+							onClick={(event) => {
+								handleClick(event);
+								setServiceSelected(service);
+							}}
 						>
-							{service.name}
+							<a href="/">{service.name}</a>
 						</li>
 					))}
 				</ul>

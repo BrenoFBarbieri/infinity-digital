@@ -1,6 +1,7 @@
 import React from "react";
 
 import styles from "./Bmi.module.css";
+
 import Card from "../Card";
 import Input from "../Form/Input";
 import Button from "../Form/Button";
@@ -21,16 +22,15 @@ const Bmi = () => {
 	}
 
 	function handleInput({ target }) {
-		const regex = testRegex(target.value);
-		if (regex) {
-			if (target.name === "height") {
-				setHeight(() => regex);
-			} else {
-				setWeight(() => regex);
-			}
+		if (target.value.length <= 0) {
+			setResult(false);
 		} else {
-			target.value.length > 0 &&
-				setMsgError("Insira somente números separados de . ou ,");
+			const regex = testRegex(target.value);
+			if (regex)
+				target.name === "height" ? setHeight(regex) : setWeight(regex);
+			else
+				target.value.length > 0 &&
+					setMsgError("Insira somente números separados de . ou ,");
 		}
 	}
 
