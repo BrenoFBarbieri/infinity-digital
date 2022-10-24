@@ -1,35 +1,58 @@
 .header {
-	width: 4rem;
-	height: 100vh;
-	background-color: var(--text);
-	box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+	width: 10rem;
+	height: calc(100vh - 4rem);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+}
+.header::after {
+	content: '';
+	display: block;
+	height: calc(100% + 4rem);
+	width: 0.06rem;
+	background: var(--bg-secondary);
+	position: absolute;
+	top: -2rem;
+	right: 0;
+}
+.logo {
+	cursor: pointer;
+	margin-top: .16rem;
+	margin-bottom: 6rem;
+}
+.logo {
+	font-size: 1.3rem;
+	color: var(--primary);
+	transition: .2s;
+}
+.logo:hover,
+.logo:focus {
+	color: var(--title);
 }
 .nav {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 1rem 0;
+	flex: 1;
 }
-.logoContainer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding-bottom: 1rem;
-	border-bottom: 1px solid var(--bg);
+.nav > ul > li > a {
+	color: #7f7d84;
+	font-size: 1.06rem;
+	margin-bottom: .9rem;
 	cursor: pointer;
 	transition: .2s;
 }
-.logoContainer h1 {
-	margin-top: .3rem;
-	font-size: .5rem;
-	text-align: center;
-	line-height: 1.5;
-	letter-spacing: .12rem;
-	font-family: 'Open Sans', sans-serif;
-	color: var(--bg);
+.nav > ul > li:hover > a {
+	color: var(--title);
+	letter-spacing: .3px;
 }
-.logoContainer svg {
-	height: 1.25rem;
+.credit i {
+	color: var(--border);
+	font-size: .6em;
+}
+.credit q {
+	color: var(--title);
+	font-size: .9em;
+	transition: .2s;
+}
+.credit:hover q {
+	color: var(--primary);
 }

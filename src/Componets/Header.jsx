@@ -1,17 +1,44 @@
 import React from "react";
 
-import styles from "./Header.module.css";
-import { ReactComponent as Logo } from "../Assets/Logo.svg";
+import { ListService } from "../ListServices";
 
-const Header = () => {
+import styles from "./Header.module.css";
+
+const Header = ({ setServiceSelected }) => {
+	function handleClick(event) {
+		event.preventDefault();
+		setServiceSelected(null);
+	}
 	return (
 		<header className={styles.header}>
+			<a href="/" className={styles.logo} onClick={handleClick}>
+				Infinity Digital
+			</a>
 			<nav className={styles.nav}>
-				<div className={styles.logoContainer}>
-					<Logo className={styles.logo} />
-					<h1>Infinity Digital</h1>
-				</div>
+				<ul>
+					{ListService.map((service) => (
+						<li
+							key={service.name}
+							onClick={(event) => {
+								handleClick(event);
+								setServiceSelected(service);
+							}}
+						>
+							<a href="/">{service.name}</a>
+						</li>
+					))}
+				</ul>
 			</nav>
+			<a
+				target="_blank"
+				rel="noreferrer"
+				href="https://www.linkedin.com/in/brenobarbieri/"
+				className={styles.credit}
+			>
+				<i>Create by</i>
+				<br />
+				<q>Breno Barbieri</q>
+			</a>
 		</header>
 	);
 };

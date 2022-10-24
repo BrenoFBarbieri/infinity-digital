@@ -1,6 +1,7 @@
 import React from "react";
 
 import styles from "./Bmi.module.css";
+
 import Card from "../Card";
 import Input from "../Form/Input";
 import Button from "../Form/Button";
@@ -13,6 +14,7 @@ const Bmi = () => {
 	const [obesityGrade, setObesityGrade] = React.useState("");
 	const [result, setResult] = React.useState(false);
 	const [colorFeedback, setColorFeedback] = React.useState("var(--errors)");
+	const [msgError, setMsgError] = React.useState(null);
 
 	function testRegex(str) {
 		const regex = /^[\d,.?!]+$/;
@@ -20,13 +22,15 @@ const Bmi = () => {
 	}
 
 	function handleInput({ target }) {
-		const regex = testRegex(target.value);
-		if (regex) {
-			if (target.name === "height") {
-				setHeight(() => regex);
-			} else {
-				setWeight(() => regex);
-			}
+		if (target.value.length <= 0) {
+			setResult(false);
+		} else {
+			const regex = testRegex(target.value);
+			if (regex)
+				target.name === "height" ? setHeight(regex) : setWeight(regex);
+			else
+				target.value.length > 0 &&
+					setMsgError("Insira somente números separados de . ou ,");
 		}
 	}
 
@@ -71,15 +75,15 @@ const Bmi = () => {
 		event.preventDefault();
 		if (weight.length > 0 && height.length > 0) {
 			handleBmiCalc();
+			setMsgError(null);
 		}
 	}
 
 	return (
 		<section className={styles.container}>
-			<Card title="Informe os valores">
+			<Card title="Informe os Valores">
 				<form className={styles.form} onSubmit={handleSubmit}>
 					<Input
-						width="400px"
 						label="Altura"
 						name="height"
 						type="text"
@@ -95,35 +99,50 @@ const Bmi = () => {
 						required
 						placeholder="Quilogramas (kg)"
 						onChange={handleInput}
+						error={msgError}
 					/>
-					<Button>Calcular</Button>
+					{weight > 0 && height > 0 ? (
+						<Button style={{ marginTop: "1rem" }}>Calcular</Button>
+					) : (
+						<Button style={{ marginTop: "1rem" }} disabled>
+							Calcular
+						</Button>
+					)}
 				</form>
 			</Card>
 			{result && (
-				<Card title="Resultado da Avaliação">
-					<div className={styles.result}>
-						<div style={{ background: colorFeedback }}>
-							<p>Massa Corporal</p>
-							<span>{bmi}</span>
+				<>
+					<Card title="Resultado da Avaliação">
+						<div className={styles.result}>
+							<div style={{ background: colorFeedback }}>
+								<p>Massa Corporal</p>
+								<span>{bmi}</span>
+							</div>
+							<div style={{ background: colorFeedback }}>
+								<p>Classificação</p>
+								<span>
+									{classification.length > 0
+										? classification
+										: "Sem Classificação"}
+								</span>
+							</div>
+							<div style={{ background: colorFeedback }}>
+								<p>Grau Obesidade</p>
+								<span>
+									{obesityGrade.length > 0
+										? obesityGrade
+										: "Sem Grau de Obesidade"}
+								</span>
+							</div>
 						</div>
-						<div style={{ background: colorFeedback }}>
-							<p>Classificação</p>
-							<span>
-								{classification.length > 0
-									? classification
-									: "Sem Classificação"}
-							</span>
-						</div>
-						<div style={{ background: colorFeedback }}>
-							<p>Grau Obesidade</p>
-							<span>
-								{obesityGrade.length > 0
-									? obesityGrade
-									: "Sem Grau de Obesidade"}
-							</span>
-						</div>
-					</div>
-				</Card>
+					</Card>
+					<Card
+						style={{ animationDelay: "1s" }}
+						title="Dicas de alimentação"
+					>
+						Ola
+					</Card>
+				</>
 			)}
 		</section>
 	);
